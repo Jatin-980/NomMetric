@@ -148,6 +148,15 @@ flutter config --enable-web
 ```
 You may have to change the `CHROME_EXECUTABLE` to use your own browser instead of chrome.
 
+### Valid Setup
+After successfully setting up the project, run the project using:
+```bash
+flutter run
+```
+Or, if you're using Android studio set up the configuration with `main.dart` as endpoint, ensure an emulator.
+
+The initial page of the setup currently is: ![Setup verification](./SetupVerification.png)
+
 ### Some notes:
 1. Web support is intended for development and testing of web apps, it may need additional setup for multiple flutter packages to work properly
 2. If the emulator takes time to boot, it’s not frozen(mostly) — it’s just thinking.

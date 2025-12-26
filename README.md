@@ -1,6 +1,50 @@
 # NomMetric
 A Flutter-based mess tracking app designed for college use, enabling students to track meals across multiple messes, developed for OpenCode’25.
 
+## Project Overview
+
+NomMetric is a Flutter-based mess tracking application designed to simplify and digitize meal management in our college hostels.
+In many colleges, mess attendance, meal tracking, and rebate calculations are handled manually, leading to inaccuracies, lack of transparency, and poor user experience.
+
+NomMetric aims to provide a unified, scalable solution where students can track their meals across multiple messes, while enabling accurate attendance logging and data-driven decision-making.
+
+The application is built using Flutter for cross-platform support and Firebase (Firestore) as the backend, ensuring real-time updates, reliability, and ease of scalability.
+In addition to being a practical utility, NomMetric is developed as a learning-focused open-source project, allowing contributors to gain hands-on experience with Flutter, Firebase, and real-world application architecture.
+### Core Features
+
+#### 1. Meal & Attendance Tracking
+- Track student attendance for each meal (breakfast, lunch, dinner)
+- Support for multiple messes within the same campus
+- Accurate daily and monthly attendance records
+- Reduced ambiguity compared to manual attendance systems
+
+#### 2. Rebate Calculation System
+- Automatic calculation of mess rebates based on missed meals
+- Monthly rebate summaries for students
+- Configurable rebate rules to match different colleges
+- Transparent rebate history to avoid disputes
+
+#### 3. Menu Management
+- Digital mess menu visible to students
+- Support for daily and weekly menus
+- Easy updates to menu items without app redeployment
+- Support for special meals and holiday menus
+
+#### 4. Data Persistence & Real-time Sync
+- Firestore-backed real-time data updates
+- Consistent data across devices and sessions
+- Offline-friendly architecture with automatic sync when online
+
+#### 5. Clean & Modular UI
+- Simple, intuitive interface designed for daily use
+- Modular widget structure for easy feature expansion
+- Responsive layouts for different screen sizes
+
+---
+
+NomMetric is intended to be both a **practical campus utility** and a **learning-focused open-source project**, making it suitable for experimentation, feature expansion, and architectural improvements.
+
+
 ## Quick Start
 Ready to contribute? Check out our [Contributing Guide](Contributing.md). It covers everything you need to know about setting up the project, claiming issues, and submitting pull requests for OpenCode'25.
 
@@ -10,11 +54,11 @@ Before you begin working on this project, ensure your environment meets the foll
 #### Core Tooling (All OS)
 - **Flutter SDK**: `^3.27.0`
 - **Dart SDK**: `3.6.0` (bundled with Flutter 3.27.x)
-- **Java Development Kit (JDK)**: `17` or `21`
+- **Java Development Kit (JDK)**: `17`(recommended) or `21`
 
 #### Platform-Specific Tooling
 - **Android SDK** (Linux / macOS / Windows):
-  - Compile SDK / Target SDK: `API level 35` (Android 15)
+  - Compile SDK / Target SDK: `API level 35` (Android 15, recommended)
 - **iOS SDK** (macOS only):
   - Requires Xcode and iOS platform tools
 
@@ -29,7 +73,7 @@ This project uses Flutter and Firebase and is **largely OS-independent**.
 
 #### Required Flutter Packages
 
-Add the following dependencies to your `pubspec.yaml`.
+These following packages are used in this project:
 - **flutter_riverpod**: `^2.5.1`  
   https://pub.dev/packages/flutter_riverpod
 
@@ -45,18 +89,42 @@ Add the following dependencies to your `pubspec.yaml`.
 ### Notes
 - Ensure `compileSdkVersion` and `targetSdkVersion` are set to `35`.
 - Run `flutter doctor` to verify that all dependencies are correctly installed.
-- Firebase projects should be configured to support Android 15.
 
 Try checking out [contributing guide](Contributing.md) for further help.
 
+## Learning Resources
+
+If you’re new to Flutter, Firebase, or Riverpod, the resources below will help you get started and contribute effectively.
+
+### Flutter
+- Flutter Documentation: https://docs.flutter.dev
+- Flutter Widget Catalog: https://docs.flutter.dev/ui/widgets
+- Flutter YouTube (official): https://www.youtube.com/@flutterdev
+
+### Firebase & Firestore
+- Firebase for Flutter: https://firebase.flutter.dev
+- Firestore Documentation: https://firebase.google.com/docs/firestore
+- Firestore Data Modeling (video): https://www.youtube.com/watch?v=v_hR4K4auoQ
+
+### State Management (Riverpod)
+- Riverpod Documentation: https://riverpod.dev
+- Riverpod Crash Course (video): https://www.youtube.com/watch?v=3OdciTLjS8k
+
+### Project-Specific References
+- FlutterFire CLI: https://firebase.flutter.dev/docs/cli
+- GoRouter Documentation: https://pub.dev/packages/go_router
+
+
 ## Setting up
 1. Clone the repo
-``` md
+``` bash
 git clone https://github.com/opencodeiiita/NomMetric.git
 cd NomMetric
 ```
 
 2. Link the repository to your Firebase project using the application ID defined in `android/app/build.gradle`.
+
+Current applicationID : `com.example.nommetric`
 
 
 ## Project Structure
@@ -71,7 +139,7 @@ NomMetric/
 │   ├── widgets/       # Reusable UI elements
 │   ├── services/      # Logic for Firebase, Firestore, and APIs
 │   ├── models/        # Data structures; (User, Meal, Rating objects)
-│   ├── provider/     # State management logic (Riverpod)
+│   ├── provider/      # State management logic (Riverpod)2
 ├── contributors.md    # Registration file for participants
 └── pubspec.yaml       # Project dependencies and configuration
 ```
